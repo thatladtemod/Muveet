@@ -1,9 +1,15 @@
-import Board from "./components/Board"
+import Board from "./components/Board";
+import Header from "./components/Header";
+import Form from "./components/Form";
 
 export default function App() {
   return (
-    <div className="app">
-      <Board />
-    </div>
-  )
+    <>
+      <Header />
+      <main className="main">
+        <Form />
+        <Board />
+      </main>
+    </>
+  );
 }

@@ -1,0 +1,21 @@
+// Color Palette Variables
+
+$primary-color: #6366F1; // action buttons, column titles
+$accent-color: #84CC16; // success messages, done tasks, highlights
+$background-color: #F9FAFB; // board background
+$column-color: #F3F4F6; // column cards
+$card-color: #FAFAFA; // individual task items
+$text-primary: #111827; // headings
+$text-secondary: #4B5563; // description and labels
+$dragging-color: #FCD34D; // during drag and drop
+
+// Font Variables
+
+$font-family: 'Inter', sans-serif;
+$font-weights: (
+    "light": 300,
+    "regular": 400,
+    "medium": 500,
+    "semibold": 600,
+    "bold": 700,
+);
