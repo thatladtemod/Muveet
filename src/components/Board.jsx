@@ -9,6 +9,7 @@ export default function Board({
   handleEditChange,
   saveEdit,
   cancelEdit,
+  moveToDone,
 }) {
   return (
     <div className="board">
@@ -24,6 +25,7 @@ export default function Board({
           handleEditChange={handleEditChange}
           saveEdit={saveEdit}
           cancelEdit={cancelEdit}
+          moveToDone={moveToDone}
         />
       ))}
     </div>

@@ -84,6 +84,27 @@ export default function App() {
     setEditingValue("");
   }
 
+  // Move task to Done column
+  function moveToDone(column, index) {
+    setData((prevData) => {
+      const taskToMove = prevData[column][index];
+      // Remove from current column
+      const updatedSource = prevData[column].filter((_, i) => i !== index);
+      // Add to Done column
+      const updatedDone = [...prevData["Done ✅"], taskToMove];
+      return {
+        ...prevData,
+        [column]: updatedSource,
+        ["Done ✅"]: updatedDone,
+      };
+    });
+    // If editing, cancel edit if the task is moved
+    if (editingTask.column === column && editingTask.index === index) {
+      setEditingTask({ column: null, index: null });
+      setEditingValue("");
+    }
+  }
+
   return (
     <>
       <Header />
@@ -98,6 +119,7 @@ export default function App() {
           handleEditChange={handleEditChange}
           saveEdit={saveEdit}
           cancelEdit={cancelEdit}
+          moveToDone={moveToDone}
         />
       </main>
     </>

@@ -9,12 +9,21 @@ export default function TaskCard({
   handleEditChange,
   saveEdit,
   cancelEdit,
+  onCheck,
+  column,
 }) {
   return (
     <div className="task-card">
-      <div className="check-box">
-        <input type="checkbox" name="task-check" id="task-check" />
-      </div>
+      {column !== "Done ✅" && (
+        <div className="check-box">
+          <input
+            type="checkbox"
+            name="task-check"
+            id="task-check"
+            onChange={onCheck}
+          />
+        </div>
+      )}
       {isEditing ? (
         <>
           <div className="task-title">

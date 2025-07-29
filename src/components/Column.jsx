@@ -10,6 +10,7 @@ export default function Column({
   handleEditChange,
   saveEdit,
   cancelEdit,
+  moveToDone,
 }) {
   return (
     <div className="board-column">
@@ -27,6 +28,8 @@ export default function Column({
           handleEditChange={handleEditChange}
           saveEdit={saveEdit}
           cancelEdit={cancelEdit}
+          onCheck={() => moveToDone(title, index)}
+          column={title}
         />
       ))}
     </div>
